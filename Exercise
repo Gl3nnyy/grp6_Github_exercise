@@ -1,0 +1,56 @@
+#1.Create script using a lambda function range from 1-10, add 20 in the value:
+add_twenty = lambda x: x + 20
+result = [add_twenty(num) for num in range(1, 11)]
+print(result)
+
+#2.Create script using a lambda function for sorting:
+people = [("Alice", 31), ("Bob", 22), ("Charlie", 33), ("David", 26)]
+sorted_people = sorted(people, key=lambda x: x[1])
+print("Sorted by age:")
+for person in sorted_people:
+    print(person)
+
+#3.Create script using a lambda function to return a function:
+def create_scaler(factor):
+
+    return lambda numbers: [x * factor for x in numbers]
+
+scale_by_ten = create_scaler(10)
+numbers = [1, 2, 3, 4, 5]
+scaled_numbers = scale_by_ten(numbers)
+print("Scaled Numbers:", scaled_numbers)
+
+scale_by_half = create_scaler(0.5)
+half_scaled_numbers = scale_by_half(numbers)
+print("Half Scaled Numbers:", half_scaled_numbers)
+
+#4.Create script using a lambda function in list:
+# Define a list of lambda functions for basic arithmetic operations
+operations = [
+    lambda x, y: x + y,
+    lambda x, y: x - y,
+    lambda x, y: x * y,
+    lambda x, y: x / y
+]
+
+
+a = 20
+b = 5
+
+
+results = [op(a, b) for op in operations]
+
+
+operation_names = ["Addition", "Subtraction", "Multiplication", "Division"]
+for name, result in zip(operation_names, results):
+    print(f"{name}: {result}")
+
+
+#5.Create script using a lambda function to sort a list of strings by the last character:
+strings = ["red", "green", "violet", "yellow", "orange"]
+
+sorted_strings = sorted(strings, key=lambda x: x[-1])
+
+print("Sorted by last character:")
+for s in sorted_strings:
+    print(s)
